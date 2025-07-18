@@ -3,7 +3,9 @@ FROM node:20
 WORKDIR /user/src/app
 
 COPY package*.json ./
-RUN npm install
+
+ENV PUPPETEET_SKIP_CHROMIUM_DOWNLOAD=true
+RUN npm install --no-optional
 
 COPY . .
 
