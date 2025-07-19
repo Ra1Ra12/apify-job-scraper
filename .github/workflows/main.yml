@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  post-to-trello:
+   post-to-trello:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
