@@ -1,0 +1,28 @@
+NAME: RSS to Trello
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+jobs:
+  post-to-trello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up python
+        uses: actions/setup-python@4
+        with:
+          python-version: '3.11'
+
+    - name: Install dependencies
+       run: pip install requests feedparser
+
+    - name: Run scraper and send to Trello
+       env:
+         TRELLO_KEY: ${{ secrets.TRELLO_KEY }}
+         TRELLO_TOKEN: ${{ secrets.TRELLO_TOKEN }}
+         TRELLO_LIST_ID: ${{ secret.TRELLO_LIST_ID }}
+      run: python scraper.py
