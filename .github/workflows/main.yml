@@ -1,28 +1,13 @@
-name: RSS to Trello
+name: Test Workflow
 
 on:
   schedule:
     - cron: "*/30 * * * *"
-  workflow_dispatch:
+ workflow_dispatch:
 
-jobs:
-  post-to-trello:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-
-      - name: Set up node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run scraper and send to Trello
-        env:
-         TRELLO_KEY: ${{ secrets.TRELLO_KEY }}
-         TRELLO_TOKEN: ${{ secrets.TRELLO_TOKEN }}
-         TRELLO_LIST_ID: ${{ secrets.TRELLO_LIST_ID }}
-        run: node main.js
+ jobs:
+   hello-world:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Say Hello
+         name: echo "Hello, world!"
