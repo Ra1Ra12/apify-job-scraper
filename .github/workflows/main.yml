@@ -1,4 +1,4 @@
-name: Test Workflow
+name: Trello Job Scraper Test
 
 on:
   schedule:
