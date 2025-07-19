@@ -12,17 +12,17 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Set up python
-        uses: actions/setup-python@4
+      - name: Set up node.js
+        uses: actions/setup-node@v3
         with:
-          python-version: '3.11'
+          node-version: '20'
 
     - name: Install dependencies
-       run: pip install requests feedparser
+       run: npm install
 
     - name: Run scraper and send to Trello
        env:
          TRELLO_KEY: ${{ secrets.TRELLO_KEY }}
          TRELLO_TOKEN: ${{ secrets.TRELLO_TOKEN }}
          TRELLO_LIST_ID: ${{ secrets.TRELLO_LIST_ID }}
-      run: python scraper.py
+      run: node main.js
