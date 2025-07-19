@@ -3,12 +3,11 @@ name: Test Workflow
 on:
   schedule:
     - cron: '*/30 * * * *'
-    
-   workflow_dispatch:
+  workflow_dispatch:
 
- jobs:
-   hello-world:
-     runs-on: ubuntu-latest
-     steps:
-       - name: Say Hello
-         name: echo "Hello, world!"
+jobs:
+     hello-world:
+       runs-on: ubuntu-latest
+       steps:
+         - name: Say Hello
+           run: echo "Hello, world!"
