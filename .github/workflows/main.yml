@@ -6,8 +6,12 @@ on:
   workflow_dispatch:
 
 jobs:
-     hello-world:
+  post-to-trello:
        runs-on: ubuntu-latest
+       env:
+         TRELLO_KEY: ${{ secrets.TRELLO__KEY }}
+         TRELLO_TOKEN: ${{ secrets.TRELLO_TOKEN }}
+         TRELLO_LIST_ID: ${{ secrets.TRELLO_LIST_ID }}
        steps:
          - name: Post to Trello
            run:  |
