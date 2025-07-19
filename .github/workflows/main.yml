@@ -9,5 +9,12 @@ jobs:
      hello-world:
        runs-on: ubuntu-latest
        steps:
-         - name: Say Hello
-           run: echo "Hello, world!"
+         - name: Post to Trello
+           run:  |
+             curl -x POST "https://api.trello.com/1/cards" \
+               -H "Content-Type: application/json"\
+               --data-urlencode "name=New Job: Legal Assistant" \
+               --data-urlencode "desc=Scraped job from GitHub Action test" \
+               --data-urlencode "idList=${{ secrets.TRELLO_LIST_ID }}" \
+               --data-urlencode "key=${{ secrets.TRELLO_KEY }}" \
+               --data-urlencode "token${{ secrets.TRELLO_TOKEN  }}" \
