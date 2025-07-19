@@ -1,12 +1,8 @@
 {
   "name": "apify-job-scraper",
   "version": "1.0.0",
-  "description": "A job scraper using Apify and Puppeteer",
   "main": "main.js",
-  "scripts": {
-    "start": "node main.js"
-  },
   "dependencies": {
-    "puppeteer": "^20.9.0"
+    "puppeteer": "^22.8.2"
   }
 }
