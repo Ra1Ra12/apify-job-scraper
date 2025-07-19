@@ -17,12 +17,12 @@ jobs:
         with:
           node-version: '20'
 
-     - name: Install dependencies
-       run: npm install
+      - name: Install dependencies
+        run: npm install
 
-     - name: Run scraper and send to Trello
-       env:
+      - name: Run scraper and send to Trello
+        env:
          TRELLO_KEY: ${{ secrets.TRELLO_KEY }}
          TRELLO_TOKEN: ${{ secrets.TRELLO_TOKEN }}
          TRELLO_LIST_ID: ${{ secrets.TRELLO_LIST_ID }}
-      run: node main.js
+        run: node main.js
