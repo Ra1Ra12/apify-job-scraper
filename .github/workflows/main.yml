@@ -17,7 +17,7 @@ jobs:
            run:  |
              curl -X POST "https://api.trello.com/1/cards" \
                -H "Content-Type: application/x-www=form-urlencoded" \
-               --data-urlencode "name=New Job: Legal Assistant" \
+               --data-urlencode "name=New Jobs: $(date +%d %b %h:%M')" \
                --data-urlencode "desc=Scraped job from GitHub Action test" \
                --data-urlencode "idList=${{ secrets.TRELLO_LIST_ID }}" \
                --data-urlencode "key=${{ secrets.TRELLO_KEY }}" \
