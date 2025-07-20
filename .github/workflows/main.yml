@@ -14,7 +14,7 @@ jobs:
          TRELLO_LIST_ID: ${{ secrets.TRELLO_LIST_ID }}
        steps:
          - name: Post to Trello
-           run:  |
+           run: |
              curl -X POST "https://api.trello.com/1/cards" \
                -H "Content-Type: application/x-www=form-urlencoded" \
                --data-urlencode "name=New Jobs: $(date +%d %b %h:%M')" \
