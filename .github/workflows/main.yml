@@ -22,4 +22,4 @@ jobs:
                --data-urlencode "idLabels=60e2a5c5ef5b1b2d4fb2cb28" \
                --data-urlencode "idList=${{ secrets.TRELLO_LIST_ID }}" \
                --data-urlencode "key=${{ secrets.TRELLO_KEY }}" \
-               --data-urlencode "token${{ secrets.TRELLO_TOKEN  }}"
+               --data-urlencode "token${{ secrets.TRELLO_TOKEN }}"
