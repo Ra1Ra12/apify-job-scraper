@@ -1,43 +1,36 @@
-const puppeteer = require('puppeteer');
-const fetch = require('node-fetch')
+const fs = require('fs');
+const fetch = require('path')
+const axios = require ('axios')
+
+const jsonFile = path.join(__dirname, 'datest_website-content-crawler_2025-07-21_15-51-48-849.json');
+
+const data = JSON.parse(fs.readFileSync(jsonFile, 'utf-8'));
 
 const TRELLO_KEY = process.env.TRELLO_KEY;
 const TRELLO_TOKEN = process.env.TRELLO_TOKEN;
 const TRELLO_LIST_ID = process.env.TRELLO_LIST_ID;
 
-async function postToTrello(jobTitle, jobUrl) {
-    const response = await fetch('https://api.trello.com/1/cards', {
-        method: 'POST'
-        headers: { 'content-Type': 'application/json' },
-        body: JSON.stringify({
-            name: jobTitle,
-            desc: jobUrl,
+async function postToTrello(item) {
+    const card = {
+            name: item['Extracted text']?.slice(0, 100)|| 'Untitled',
+            desc: '${item['Extracted text'] || ''}\n\nSource: ${item['webpage URL']}',
             idList: TRELLO_LIST_ID,
             key: TRELLO_KEY,
             takon: TRELLO_TOKEN
-        })
-    });
+};
 
-    const result = await response.json();
-    console.log('Posted to Trello: ${resuklt.name}');
-}
-(async () => {
-    const browser = await puppeteer.launch({ headless: true });
-    const page = await browser.newPage();
-    await page.goto('https://example.com/jobs');
-  
-    const jobs = await page.evaluate (() =>
-        Array.from(document.querySelectorAll('a.job-listing').map(job => ({
-            title: job.innerText,
-            url: job.href
-        }))
-     );
-
-  console.log(jobs);
-  
-  for (const job of jobs) {
-      await postToTrello(job.title, job.url);
+try {
+    const response = await axios.post('https://api.trello.com/1/cards', card);
+    console.log('Posted to Trello: ${response.data.name}');
+  } catch (err) {
+    console.error('Failed to post to Trello:', err.message);
   }
+}
 
-  await browser.close();
-})();
+async function run() {
+  for (const item of data) {
+    await postToTrello(item);
+  }
+}
+
+run();
