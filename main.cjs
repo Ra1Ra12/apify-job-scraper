@@ -11,9 +11,13 @@ const TRELLO_TOKEN = process.env.TRELLO_TOKEN;
 const TRELLO_LIST_ID = process.env.TRELLO_LIST_ID;
 
 async function postToTrello(item) {
+    const title = item.metadata?.title || 'Untitled';
+    const description =item.metadata?.description || ';
+    const url = item.url || ';
+        
     const card = {
-            name: item['Extracted text']?.slice(0, 100)|| 'Untitled',
-            desc: '${item["Extracted text"] || ""}\n\nSource: ${item["webpage URL"]}',
+            name: title.slice(0, 100),
+            desc: '${description}\n\nSource: ${url}',
             idList: TRELLO_LIST_ID,
             key: TRELLO_KEY,
             takon: TRELLO_TOKEN
