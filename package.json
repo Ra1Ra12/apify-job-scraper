@@ -1,7 +1,7 @@
 {
   "name": "apify-job-scraper",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "main.cjs",
   "type": "commonjs",
   "scripts": {
     "start": "node main.js"
