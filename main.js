@@ -1,5 +1,5 @@
 const fs = require('fs');
-const fetch = require('path')
+const path = require('path')
 const axios = require ('axios')
 
 const jsonFile = path.join(__dirname, 'datest_website-content-crawler_2025-07-21_15-51-48-849.json');
