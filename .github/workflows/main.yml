@@ -18,8 +18,11 @@ jobs:
         with:
             node-version: '18'
 
-      - name: Install dependencies
-        run: npm install
+      - name: Force Install dependencies
+        run: |
+          npm install axios
+          npm install puppeteer
+          npm install node-fetch
 
       - name: Run script
         env:
