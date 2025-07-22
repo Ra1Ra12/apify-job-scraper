@@ -14,8 +14,9 @@ const TRELLO_LIST_ID = process.env.TRELLO_LIST_ID;
 async function postToTrello(item) {
     console.log("Item debug:", item);
 
-    const title = (item.metadata && item.metadata.title) ? item.metadata.title : 'untitled';
-    const description = (item.metadata && item.metadata.description) ? item.metadata.description : '';
+    const title = item.crawl?.loadedUrl || item.url || 'Untitled';
+    const description = item.crawl?.referrerUrl || 'No description';
+
     const url = item.url || "";
 
     const card = {
