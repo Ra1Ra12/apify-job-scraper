@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 
-const jsonFile = path.join(__dirname, 'datest_website-content-crawler_2025-07-21_15-51-48-849.json');
+const jsonFile = process.env.JSON_FILE || path.join(__dirname, 'default-fallback.json');
 const data = JSON.parse(fs.readFileSync(jsonFile, 'utf-8'));
 
 const TRELLO_KEY = process.env.TRELLO_KEY;
