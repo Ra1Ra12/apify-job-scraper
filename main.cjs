@@ -3,7 +3,9 @@ const path = require('path');
 const axios = require('axios');
 
 const jsonFile = process.env.JSON_FILE || path.join(__dirname, 'default-fallback.json');
+console.log("Using JSON file:", jsonFile);
 const data = JSON.parse(fs.readFileSync(jsonFile, 'utf-8'));
+
 
 const TRELLO_KEY = process.env.TRELLO_KEY;
 const TRELLO_TOKEN = process.env.TRELLO_TOKEN;
