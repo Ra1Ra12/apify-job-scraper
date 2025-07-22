@@ -11,9 +11,11 @@ const TRELLO_TOKEN = process.env.TRELLO_TOKEN;
 const TRELLO_LIST_ID = process.env.TRELLO_LIST_ID;
 
 async function postToTrello(item) {
+    console.log("Item debug:",item);
+    
     const title = (item.metadata && item.metadata.title) ? item.metadata.title: 'untitled';
     const description = (item.metadata && item.metadata.description) ? item.metadata.description : '';
-    const url = item.url || ';
+    const url = item.url || "";
         
     const card = {
             name: title.slice(0, 100),
