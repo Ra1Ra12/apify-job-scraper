@@ -1,0 +1,16 @@
+[
+  {
+    "type": "rss",
+    "url": "https://uk.indeed.com/jobs?q=Legal+Secretary+Allianz&l=London&rss=1",
+    "filter": ["legal secretary", "paralegal"]
+  },
+  {
+    "type": "html",
+    "url": "https://www.pinnaclewealth.co.uk/jobs-at-pinnacle/",
+    "item": "div.job_listings li", 
+    "title": "h3",
+    "link": "a[href]",
+    "date": null,
+    "filter": ["legal secretary", "paralegal"]
+  }
+]
