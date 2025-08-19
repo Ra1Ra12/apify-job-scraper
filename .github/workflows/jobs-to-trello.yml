@@ -12,7 +12,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm ci
+      - run: npm install --no-fund --no-audit
       - run: node scripts/post_to_trello.js
         env:
           TRELLO_KEY: ${{ secrets.TRELLO_KEY }}
