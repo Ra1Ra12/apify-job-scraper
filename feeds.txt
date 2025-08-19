@@ -1,2 +1,4 @@
 https://companyA.com/careers/rss
 https://jobs.companyB.com/atom.xml
+https://jobs.workable.com/feed?query=paralegal
+https://company.com/careers/rss?search=legal secretary
