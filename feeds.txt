@@ -2,3 +2,5 @@ https://jobs.workable.com/feed?query=paralegal&location=london
 https://jobs.workable.com/feed?query=legal+secretary&location=london
 https://uk.jooble.org/jobs-paralegal?rss=1&rid=London
 https://uk.jooble.org/jobs-legal-secretary?rss=1&rid=London
+https://uk.indeed.com/jobs?q=Legal+Secretary+Allianz&l=London&rss=1
+https://uk.indeed.com/jobs?q=Paralegal+Allianz&l=London&rss=1
