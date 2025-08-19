@@ -1,35 +1,29 @@
 name: Trello Job Scraper Test
-
 on:
   schedule:
     - cron: '*/30 * * * *'
-  workflow_dispatch:
+  workflow_dispatch: {}
 
 jobs:
   post-to-trello:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
-      - name: Force Install dependencies
-        run: |
-          npm install axios
-          npm install puppeteer
-          npm install node-fetch
+      - name: Install dependencies
+        run: npm install --no-fund --no-audit
 
-      - name: Run scraper
+      - name: Run scraper from sources.json
         env:
           TRELLO_KEY: ${{ secrets.TRELLO_KEY }}
           TRELLO_TOKEN: ${{ secrets.TRELLO_TOKEN }}
           TRELLO_LIST_ID: ${{ secrets.TRELLO_LIST_ID }}
-          JSON_FILE: dataset_website-content-crawler_2025-07-21_15-51-48-849.json
-        run: node main.cjs
+        run: node scripts/from_sources_to_trello.js
 
              
