@@ -1,0 +1,2 @@
+https://companyA.com/careers/rss
+https://jobs.companyB.com/atom.xml
