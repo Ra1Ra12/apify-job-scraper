@@ -66,7 +66,7 @@ function absolutize(href, base) {
 
 async function handleHTML(cfg, filter, seen) {
   const { data: html } = await axios.get(cfg.url, { timeout: 30000 });
-  const $ = cheerio.load(html);
+  const $ = load(html);
   $(cfg.item).each(async (_, el) => {
     const $el = $(el);
     const title = cfg.title ? $el.find(cfg.title).first().text().trim() : $el.text().trim();
