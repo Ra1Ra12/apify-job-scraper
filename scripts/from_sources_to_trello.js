@@ -2,7 +2,7 @@
 import fs from "fs";
 import axios from "axios";
 import Parser from "rss-parser";
-import cheerio from "cheerio";
+import { load } from "cheerio";
 
 const { TRELLO_KEY, TRELLO_TOKEN, TRELLO_LIST_ID } = process.env;
 if (!TRELLO_KEY || !TRELLO_TOKEN || !TRELLO_LIST_ID) {
