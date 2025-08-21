@@ -12,9 +12,7 @@
     "link": "a[href]",
     "date": null,
     "filter": ["legal secretary", "paralegal"]
-  }
-]
-[
+  },
   {
     "type": "rss",
     "url": "https://uk.indeed.com/jobs?q=Legal+Secretary+%22St.+James%27s+Place%22&l=London&rss=1"
