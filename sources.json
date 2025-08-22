@@ -33,5 +33,14 @@
   "link": "h2 a",
   "date": "span.date-display-single",
   "filter": ["legal secretary", "paralegal"]
+},
+{
+  "type": "html",
+  "url": "https://bbva.wd3.myworkdayjobs.com/BBVA?locationCountry=29247e57dbaf46fb855b224e03170bc7",
+  "item": "li.WDListItem",
+  "title": "a.WDLink",
+  "link": "a.WDLink",
+  "date": "span.WDDate",
+  "filter": ["legal secretary", "paralegal"]
 }
 ]
