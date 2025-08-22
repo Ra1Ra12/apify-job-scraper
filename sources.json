@@ -51,5 +51,14 @@
   "link": "a[data-qa='job-title']",
   "date": "span[data-qa='posted-date']",
   "filter": ["legal secretary", "paralegal"]
+},
+{
+  "type": "html",
+  "url": "https://jobs.cliffordchance.com/jobs?q=London+&options=&page=1",
+  "item": "li.job-listing, div.job-list-item", 
+  "title": "h4, h3, a.job-title",
+  "link": "a[href]",
+  "date": "time, span.date",
+  "filter": ["legal secretary", "paralegal"]
 }
 ]
