@@ -42,5 +42,14 @@
   "link": "a.WDLink",
   "date": "span.WDDate",
   "filter": ["legal secretary", "paralegal"]
+},
+{
+  "type": "html",
+  "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/jobs?keyword=Legal+paralegal+&location=LONDON%2C+United+Kingdom&locationId=300000057005324&locationLevel=state&mode=location",
+  "item": "div[data-qa='search-result-item']",
+  "title": "a[data-qa='job-title']",
+  "link": "a[data-qa='job-title']",
+  "date": "span[data-qa='posted-date']",
+  "filter": ["legal secretary", "paralegal"]
 }
 ]
