@@ -24,5 +24,14 @@
   {
     "type": "rss",
     "url": "https://uk.indeed.com/jobs?q=Paralegal+%22St.+James%27s+Place%22&l=London&rss=1"
-  }
+  },
+  {
+  "type": "html",
+  "url": "https://www.brookfield.com/careers/opportunities?field_city_target_id=All&field_country_target_id=All&field_business_group_target_id=All&field_career_division_target_id=305&field_career_location_target_id=484",
+  "item": "div.views-row", 
+  "title": "h2 a",
+  "link": "h2 a",
+  "date": "span.date-display-single",
+  "filter": ["legal secretary", "paralegal"]
+}
 ]
