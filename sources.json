@@ -60,5 +60,13 @@
   "link": "a[href]",
   "date": "time, span.date",
   "filter": ["legal secretary", "paralegal"]
+},
+{
+  "type": "rss",
+  "url": "https://uk.indeed.com/jobs?q=Legal+Secretary+Citi&l=London&rss=1"
+},
+{
+  "type": "rss",
+  "url": "https://uk.indeed.com/jobs?q=Paralegal+Citi&l=London&rss=1"
 }
 ]
