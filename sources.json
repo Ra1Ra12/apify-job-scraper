@@ -68,5 +68,17 @@
 {
   "type": "rss",
   "url": "https://uk.indeed.com/jobs?q=Paralegal+Citi&l=London&rss=1"
+},
+{
+  "type": "rss",
+  "url": "https://uk.indeed.com/jobs?q=Citi&l=London&rss=1"
+},
+{
+  "type": "rss",
+  "url": "https://uk.indeed.com/jobs?q=JPMorgan+Chase+Legal&l=London&rss=1"
+},
+{
+  "type": "rss",
+  "url": "https://uk.indeed.com/jobs?q=Paralegal+JPMorgan+Chase&l=London&rss=1"
 }
 ]
